@@ -19,8 +19,9 @@ Completed. Followed along with the instructional material. First time using the 
 ![paper](/journal/img/cruddur_paper.jpg)
 
 -Final Logical Diagram using Lucid (following the Cruddur video example)
-Added a little jazz to it not much 
-<p> https://lucid.app/lucidchart/invitations/accept/inv_b149050f-ddb9-4a66-96b6-0a992a4f1f37 </p>
+<p>Added a little jazz to it not much</p>
+
+[Final Lucid Chart Link](https://lucid.app/lucidchart/1e6f2635-5cb8-4565-8229-e33e416f402d/edit?invitationId=inv_b149050f-ddb9-4a66-96b6-0a992a4f1f37)
 
 ### Other
 Watched a majority of the videos in Week O but had to catch up on the Lucid charts and journaling. 
