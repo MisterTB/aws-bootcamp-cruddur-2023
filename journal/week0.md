@@ -14,11 +14,9 @@ Completed. Followed along with the instructional material. First time using the 
 
 ### Diagrams
 -Paper Napkin
-Well its not on paper but in my notepad where I keep my notes. Produced during the first video session.
+<p>Well its not on paper but in my notepad where I keep my notes. Produced during the first video session.</p>
 
-
--Initial Crude Diagram using Lucid
-
+![paper](/journal/img/cruddur_1.png)
 
 -Final Logical Diagram using Lucid (following the Cruddur video example)
 Added a little jazz to it not much 
