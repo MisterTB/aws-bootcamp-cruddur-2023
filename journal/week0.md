@@ -16,7 +16,7 @@ Completed. Followed along with the instructional material. First time using the 
 -Paper Napkin
 <p>Well its not on paper but in my notepad where I keep my notes. Produced during the first video session.</p>
 
-![paper](/journal/img/cruddur_1.png)
+![paper](/journal/img/cruddur_paper.png)
 
 -Final Logical Diagram using Lucid (following the Cruddur video example)
 Added a little jazz to it not much 
