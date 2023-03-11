@@ -22,6 +22,10 @@ from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExport
 from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
 
+#for AWS Xray observability platform
+from aws_xray_sdk.core import xray_recorder
+from aws_xray_sdk.ext.flask.middleware import XRayMiddleware
+
 #honeycomb provider and traces
 provider = TracerProvider()
 processor = BatchSpanProcessor(OTLPSpanExporter())
@@ -35,6 +39,11 @@ app = Flask(__name__)
 #Initialize instrumentation with flask
 FlaskInstrumentor().instrument_app(app)
 RequestsInstrumentor().instrument()
+
+#AWS Xray SDK
+xray_url = os.getenv("AWS_XRAY_URL")
+xray_recorder.configure(service='Cruddur', dynamic_naming=xray_url)
+XRayMiddleware(app, xray_recorder)
 
 frontend = os.getenv('FRONTEND_URL')
 backend = os.getenv('BACKEND_URL')
