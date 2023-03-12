@@ -10,3 +10,5 @@ opentelemetry-instrumentation-requests
 
 #installs AWS xray
 aws-xray-sdk
+
+watchtower
