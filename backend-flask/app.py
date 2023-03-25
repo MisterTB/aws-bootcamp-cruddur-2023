@@ -96,6 +96,7 @@ def init_rollbar():
 frontend = os.getenv('FRONTEND_URL')
 backend = os.getenv('BACKEND_URL')
 origins = [frontend, backend]
+
 cors = CORS(
   app, 
   resources={r"/api/*": {"origins": origins}},
@@ -163,9 +164,9 @@ def data_home():
      data = HomeActivities.run(cognito_user_id=claims['username'])
    except TokenVerifyError as e:
       # unauthenicatied request
-      app.logger.debug(e)
-      app.logger.debug("unauthenicated")
-      data = HomeActivities.run()
+     app.logger.debug(e)
+     app.logger.debug("unauthenicated")
+     data = HomeActivities.run()
    return data, 200
 
 @app.route("/api/activities/notifications", methods=['GET'])
