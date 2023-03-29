@@ -4,6 +4,8 @@ from flask_cors import CORS, cross_origin
 import os
 import sys
 
+#from flask_awscognito import AWSCognitoAuthentication
+
 from services.home_activities import *
 from services.notifications_activities import *
 from services.user_activities import *
@@ -24,6 +26,7 @@ from opentelemetry.instrumentation.requests import RequestsInstrumentor
 from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
 from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
+from opentelemetry.sdk.trace.export import ConsoleSpanExporter, SimpleSpanProcessor
 
 #for AWS Xray observability platform
 from aws_xray_sdk.core import xray_recorder
@@ -157,15 +160,16 @@ def data_home():
    access_token = extract_access_token(request.headers)
    try:
      claims = cognito_jwt_token.verify(access_token)
-      # authenicatied request
+      # authenticatied request
      app.logger.debug("authenicated")
      app.logger.debug(claims)
      app.logger.debug(claims['username'])
      data = HomeActivities.run(cognito_user_id=claims['username'])
    except TokenVerifyError as e:
-      # unauthenicatied request
+
+      # unauthenticatied request
      app.logger.debug(e)
-     app.logger.debug("unauthenicated")
+     app.logger.debug("unauthenticated")
      data = HomeActivities.run()
    return data, 200
 
